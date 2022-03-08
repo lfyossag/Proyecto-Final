@@ -33,7 +33,7 @@ db.init_app(app)
 CORS(app)
 
 # Setup the flask-JWT-Extended extensio
-app.config["JWT_SECRET_KEY"] = "cualquiercosa"
+app.config["JWT_SECRET_KEY"] = os.environ.get("JWT_KEY")
 jwt = JWTManager(app)
 
 # add the admin
@@ -64,22 +64,7 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0 # avoid cache memory
     return response
 
-@api.route('/login', methods=["POST"])
-def login():
-    data = request.get_json()
 
-    # Validate
-    if not data["email"]:
-        return jsonify({"error": "Invalid"}), 400
-    if not data["password"]:
-        return jsonify({"error": "Invalid"}), 400
-
-    user = User.query.filter_by(email=email).first()
-
-    # Create Token
-    access_token = create_access_token(identity=email)
-
-    return jsonify({"access_token": access_token}), 200
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
