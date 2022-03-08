@@ -23,9 +23,17 @@ def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
 
-    user = User.query.filter_by(email=email).first()
+    # print(email + password)
+   
 
-    # Validate
+    user = User.query.filter_by(email=email).first()
+    print(user)
+
+    ## User does not exist
+    if user is None:
+        return jsonify({"msg": "User does not exist"}), 404
+
+    # # Validate
     if email != user.email or password != user.password:
         return jsonify({"msg": "Bad username or password"}), 401
 
@@ -34,6 +42,7 @@ def login():
     access_token = create_access_token(identity=email)
 
     return jsonify({"access_token": access_token}), 200
+    
 
 # Protect a route with jwt_required, which will kick out requests
 # without a valid JWT present.

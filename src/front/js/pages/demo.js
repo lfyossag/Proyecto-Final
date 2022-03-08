@@ -7,12 +7,14 @@ export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
+		<>
+		{store.isLogged?
 		<div className="container">
 			<button className="btn btn-success" onClick={()=>actions.getProfile()}>mis datos</button>
 			<br />
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
-		</div>
-	);
+		</div>:<Redirect to="/"/>}</>
+	);	
 };

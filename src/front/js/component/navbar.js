@@ -10,11 +10,12 @@ export const Navbar = () => {
 				<Link to="/">
 					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
 				</Link>
+				{store.isLogged?
 				<div className="ml-auto">
 					<Link to="/">
 						<button className="btn btn-primary" onClick={() => actions.logout()}>Logout</button>
 					</Link>
-				</div>
+				</div>:null}
 			</div>
 		</nav>
 	);
