@@ -44,8 +44,8 @@ def get_profile():
     current_user = get_jwt_identity()
     user = User.query.filter_by(email=current_user).first()
 
-    if current_user != user.email:
-        return jsonify(user.serialize()), 400
+    if current_user == user.email:
+        return jsonify(user.serialize()), 200
 
 
-    return jsonify(logged_in_as=current_user), 200
+    return jsonify(logged_in_as=current_user), 400
