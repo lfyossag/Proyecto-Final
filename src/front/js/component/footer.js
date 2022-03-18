@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div>
       <footer className="text-center text-lg-start bg-light text-muted bg-dark fixed-bottom">
