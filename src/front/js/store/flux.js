@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					"email": email,
 					"password": password
 				}
-				fetch('https://3001-joaquinalzugara-jwtauthe-6cj8llonl0f.ws-us34.gitpod.io/api/login',{
+				fetch('https://3001-joaquinalzugara-proyecto-mwp2uhlf4jh.ws-us38.gitpod.io/api/login',{
 						method: 'POST',
 						headers:{
 							'Content-Type':'application/json'
@@ -52,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getProfile: ()=>{
 				let token = localStorage.getItem('token');
 
-				fetch('https://3001-joaquinalzugara-jwtauthe-6cj8llonl0f.ws-us34.gitpod.io/api/user/profile',{
+				fetch('https://3001-joaquinalzugara-proyecto-mwp2uhlf4jh.ws-us38.gitpod.io/api/user/profile',{
 					method: 'GET',
 					headers:{
 						'Content-Type':'application/json',
