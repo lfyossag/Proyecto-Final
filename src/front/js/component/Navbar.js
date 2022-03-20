@@ -1,14 +1,15 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/home.css";
+
 
 export const Navbar = () => {
 	const {store, actions} = useContext(Context)
 	return (
-	<nav class="navbar navbar-light bg-light text-muted bg-dark">
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light text-muted bg-dark">
 	<div class="container">
-		<div class="row">
-			<div className="col-2">
 				<a class="navbar-brand text-white">
 					<img
 						alt="svgImg"
@@ -16,8 +17,20 @@ export const Navbar = () => {
 						/>
 						FIERAS
 				</a>
-			</div>
-		</div>
+		<div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
+			<ul class="navbar-nav topButtons">
+				<li class="nav-item me-5">
+				<a class="nav-link active text-white border rounded-pill" aria-current="page" href="#">Women</a>
+				</li>
+				<li class="nav-item ms-5">
+				<a class="nav-link active text-white border rounded-pill" aria-current="page" href="#">Men</a>
+				</li>
+			</ul>
+    	</div>
+		<form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
 	</div>
 	</nav>
 	);
