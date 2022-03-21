@@ -29,13 +29,13 @@ export const NavbarGabriel = () => {
     	</div>
 		<form className="d-flex topIcons ">
         <div className="dropdown ">
-                    <a className="dropdown-toggle" type="button" id="dropdownLoginUsuario" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a type="button" id="dropdownLoginUsuario" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="bi bi-person-circle  loginIcon "></i>
                     </a>
                     <div className="dropdown-menu " aria-labelledby="dropdownLoginUsuario">
                         <div className="d-flex">
                             <h3>Sing in</h3>
-                            <a className="" href="#">Sing up</a>
+                            <Link className="" href="#">Sing up</Link>
                         </div>
                         <form >
                             <div className="form-floating ">
@@ -48,7 +48,7 @@ export const NavbarGabriel = () => {
                             </div>
                         </form>
                         <div className="invisible">
-                             <a href="#">You forgot,right?</a>
+                             <Link href="#">You forgot,right?</Link>
                         </div> 
                         <div >
                                 <button type="submit" className="btn btn-secondary">Login</button>
