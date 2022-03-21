@@ -28,13 +28,13 @@ export const NavbarGabriel = () => {
 			</ul>
     	</div>
 		<form className="d-flex topIcons ">
-        <div className="dropdown  ">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownLoginUsuario" data-bs-toggle="dropdown" aria-expanded="false">
+        <div className="dropdown ">
+                    <a className="dropdown-toggle" type="button" id="dropdownLoginUsuario" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="bi bi-person-circle  loginIcon "></i>
-                    </button>
+                    </a>
                     <div className="dropdown-menu " aria-labelledby="dropdownLoginUsuario">
                         <div className="d-flex">
-                            <span>Sing in</span>
+                            <h3>Sing in</h3>
                             <a className="" href="#">Sing up</a>
                         </div>
                         <form >
