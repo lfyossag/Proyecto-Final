@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
+import "../../styles/nav.css";
 
 
 export const Navbar = () => {
@@ -18,19 +18,19 @@ export const Navbar = () => {
 						FIERAS
 				</a>
 		<div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
-			<ul class="navbar-nav topButtons">
-				<li class="nav-item me-5">
-				<a class="nav-link active text-white border rounded-pill" aria-current="page" href="#">Women</a>
+			<ul class="navbar-nav topButtons ">
+				<li class="nav-item me-5 ">
+				<a class="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">WOMEN</a>
 				</li>
 				<li class="nav-item ms-5">
-				<a class="nav-link active text-white border rounded-pill" aria-current="page" href="#">Men</a>
+				<a class="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">MEN</a>
 				</li>
 			</ul>
     	</div>
-		<form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+		<form class="d-flex topIcons">
+			<i class="bi bi-person-circle  loginIcon"></i>
+			<i class="bi bi-cart-check-fill"></i>
+		</form>
 	</div>
 	</nav>
 	);
