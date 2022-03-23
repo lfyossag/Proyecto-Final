@@ -10,7 +10,7 @@ export const FormRegister = () => {
 						class="form-control"
 						id="firtsName"
 						aria-describedby="firtsNameHelp"
-						placeholder="Nombre (s)"
+						placeholder="First Name"
 					/>
 				</div>
 				<div class="form-group mt-3">
@@ -19,7 +19,7 @@ export const FormRegister = () => {
 						class="form-control"
 						id="lastName"
 						aria-describedby="lastNameHelp"
-						placeholder="Apellido (s)"
+						placeholder="Last Name"
 					/>
 				</div>
 				<div class="form-group mt-3">
@@ -36,7 +36,7 @@ export const FormRegister = () => {
 						type="password"
 						class="form-control"
 						id="password"
-						placeholder="Contraseña"
+						placeholder="Password"
 					/>
 				</div>
 				<div class="form-check mt-3">
@@ -46,11 +46,11 @@ export const FormRegister = () => {
 						id="check"
 					/>
 					<label class="form-check-label" for="check">
-						Acepto Términos y Condiciones
+						I accept Terms and Conditions
 					</label>
 				</div>
-				<button type="submit" class="btn btn-primary mt-3 mb-3 w-100">
-					CREAR CUENTA
+				<button type="submit" class="btn btn-primary mt-3 mb-3 w-100 bg-dark">
+					CREATE ACCOUNT
 				</button>
 			</form>
 		</div>
