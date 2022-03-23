@@ -5,9 +5,9 @@ export const PasswordRecovery = () => {
 		<div className="d-flex justify-content-center">
 			<form className="w-25">
                 <h4>
-                    ¿Olvidaste tu contraseña?
+					Forgot your password?
 				</h4>
-                <p>Escribe tu email y recibirás un enlace para restablecerla.</p>
+                <p>Enter your email and you will receive a link to reset it.</p>
 
 				<div class="form-group mt-3 d-flex justify-content-center">
 					<input
@@ -19,7 +19,7 @@ export const PasswordRecovery = () => {
 					/>
 				</div>				
 				<button type="submit" class="btn btn-primary mt-3 mb-3 w-50 bg-dark p-2">
-					ENVIAR
+					SEND
 				</button>
 			</form>
 		</div>
