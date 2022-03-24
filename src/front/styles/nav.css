@@ -21,3 +21,6 @@
     color: white;
 }
 
+.dropdown-menu[data-bs-popper] {
+    left: -9rem;
+}
