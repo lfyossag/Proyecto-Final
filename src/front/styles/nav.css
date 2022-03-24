@@ -1,0 +1,17 @@
+.navigationButtons{
+    width: 6rem;
+}
+
+.topIcons{
+    font-size: 1.5rem;
+    color: white;
+
+}
+
+.loginIcon{
+    margin-right: 1.5rem;
+}
+
+#dropdownLoginUsuario{
+    color: white;
+}
