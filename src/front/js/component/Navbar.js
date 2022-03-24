@@ -20,10 +20,10 @@ export const Navbar = () => {
 		<div className="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
 			<ul className="navbar-nav topButtons ">
 				<li className="nav-item me-5 ">
-				<a className="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">WOMEN</a>
+				<a className="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">MEN</a>
 				</li>
 				<li className="nav-item ms-5">
-				<a className="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">MEN</a>
+				<a className="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">WOMEN</a>
 				</li>
 			</ul>
     	</div>
