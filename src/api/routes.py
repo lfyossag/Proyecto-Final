@@ -58,3 +58,23 @@ def get_profile():
 
 
     return jsonify(logged_in_as=current_user), 400
+
+@api.route('/user', methods=["POST"])
+def create_account():
+    newUser = User(email= body["email"],name = body["name"], password = body["password"],lastName = body["lastName"])
+    db.session.add(newUser)
+    db.session.commit()
+
+    response_body = {
+        "msg": "User added successfuly "
+    }
+    
+    return jsonify(response_body), 200
+
+    ## User does not exist
+    if user is None:
+        return jsonify({"msg": "User does not exist"}), 404
+
+    # # Validate
+    if email != user.email or password != user.password:
+        return jsonify({"msg": "Bad username or password"}), 401
