@@ -33,10 +33,10 @@ export const NavbarGabriel = () => {
                     </a>
                     <div className="dropdown-menu loginContainer " aria-labelledby="dropdownLoginUsuario">
                         <div className="d-flex justify-content-between d-grid gap-2">
-                            <h3>Sing in</h3>
-                            <Link className=" text-right mt-2" to="#">Sing up</Link>
+                            <h3>Sign in</h3>
+                            <Link className=" text-right mt-2" to="#">Sign up</Link>
                         </div>
-                        <form >
+                        
                             <div className="form-floating form-group mt-3 ">
                                 <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
                                 <label for="floatingInput">Email</label>
@@ -45,7 +45,7 @@ export const NavbarGabriel = () => {
                                 <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
                                 <label for="floatingPassword">Password*</label>
                             </div>
-                        </form>
+                        
                         <div className="invisible forgot-password text-right mt-2">
                              <Link to="#">You forgot,right?</Link>
                         </div> 
