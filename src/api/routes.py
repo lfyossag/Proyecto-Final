@@ -1,9 +1,10 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
+from flask import Flask, request, jsonify, url_for, Blueprint, current_app
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
+
 from flask_jwt_extended import jwt_required, create_access_token, JWTManager, get_jwt_identity
 
 api = Blueprint('api', __name__)
@@ -61,7 +62,10 @@ def get_profile():
 
 @api.route('/user', methods=["POST"])
 def create_account():
-    newUser = User(email= body["email"],name = body["name"], password = body["password"],lastName = body["lastName"])
+    body = request.get_json()
+    passw = current_app.bcrypt.generate_password_hash(body["password"])
+    #current_app.bcrypt.check_password_hash(passw, body["password"]) # returns True
+    newUser = User(email= body["email"],name = body["name"], password = passw, lastName = body["lastName"])
     db.session.add(newUser)
     db.session.commit()
 
@@ -71,10 +75,4 @@ def create_account():
     
     return jsonify(response_body), 200
 
-    ## User does not exist
-    if user is None:
-        return jsonify({"msg": "User does not exist"}), 404
-
-    # # Validate
-    if email != user.email or password != user.password:
-        return jsonify({"msg": "Bad username or password"}), 401
+    
