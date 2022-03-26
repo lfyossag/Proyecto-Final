@@ -9,7 +9,7 @@ export const Navbar = () => {
 	return (
 	
 	<nav className="navbar navbar-expand-lg navbar-light bg-light text-muted bg-dark">
-	<div className="container">
+	<div className="container-md">
 				<a className="navbar-brand text-white">
 					<img
 						alt="svgImg"
@@ -17,16 +17,6 @@ export const Navbar = () => {
 						/>
 						FIERAS
 				</a>
-		<div className="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
-			<ul className="navbar-nav topButtons ">
-				<li className="nav-item me-5 ">
-				<a className="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">MEN</a>
-				</li>
-				<li className="nav-item ms-5">
-				<a className="d-flex justify-content-center nav-link active text-white border rounded-pill navigationButtons" aria-current="page" href="#">WOMEN</a>
-				</li>
-			</ul>
-    	</div>
 		<form className="d-flex topIcons dropdown ">
                     <a type="button" id="dropdownLoginUsuario" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="bi bi-person-circle  loginIcon "></i>
@@ -39,11 +29,11 @@ export const Navbar = () => {
                         
                             <div className="form-floating form-group mt-3 ">
                                 <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                <label for="floatingInput">Email</label>
+                                <label htmlFor="floatingInput">Email</label>
                             </div>
                             <div className="form-floating form-group mt-3">
                                 <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
-                                <label for="floatingPassword">Password*</label>
+                                <label htmlFor="floatingPassword">Password*</label>
                             </div>
                         
                         <div className="invisible forgot-password text-right mt-2">
