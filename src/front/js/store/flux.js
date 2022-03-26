@@ -27,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					"email": email,
 					"password": password
 				}
-				fetch('https://3001-joaquinalzugara-proyecto-ikm201skgvk.ws-us38.gitpod.io/api/login',{
+				fetch(process.env.BACKEND_URL + '/api/login',{
 						method: 'POST',
 						headers:{
 							'Content-Type':'application/json'

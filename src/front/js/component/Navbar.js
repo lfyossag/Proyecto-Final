@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import { Redirect } from "react-router-dom";
 import "../../styles/nav.css";
 
+console.log("prueba", process.env.TEST);
 
 export const Navbar = () => {
 	const [email, setEmail] = useState("")
@@ -38,7 +39,7 @@ console.log(store.isLogged);
 				</li>
 			</ul>
     	</div>
-		<form className="d-flex topIcons dropdown " onSubmit={handleSubmit}>
+		<form className="d-flex topIcons dropdown " onSubmit={handleSubmit} noValidate>
                     <a type="button" id="dropdownLoginUsuario" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="bi bi-person-circle  loginIcon "></i>
                     </a>
@@ -55,7 +56,7 @@ console.log(store.isLogged);
 								id="floatingInput" 
 								placeholder="name@example.com"
 								onChange={(e)=>setEmail(e.target.value)}
-								value= {email}
+								value={email}
 								/>
                                 <label htmlFor="floatingInput">Email</label>
                             </div>
@@ -65,8 +66,8 @@ console.log(store.isLogged);
 								className="form-control" 
 								id="floatingPassword" 
 								placeholder="Password" 
-								onChange={(e) => setPassword(e.target.value)}
-								value = {password}
+								onChange={(e)=>setPassword(e.target.value)}
+								value={password}
 								/>
                                 <label htmlFor="floatingPassword">Password*</label>
                             </div>
