@@ -34,9 +34,8 @@ def login():
         return jsonify({"msg": "User does not exist"}), 404
 
     # # Validate
-    print(current_app.bcrypt.check_password_hash(user.password,password))
-    # if email != user.email or current_app.bcrypt.check_password_hash(password, user.password) != True:
-    #     return jsonify({"msg": "Bad username or password"}), 401
+    if email != user.email or current_app.bcrypt.check_password_hash(user.password,password) != True:
+         return jsonify({"msg": "Bad username or password"}), 401
 
 
     # Create Token
