@@ -1,10 +1,18 @@
 import React from "react";
 import "../../styles/home.css";
 import LoginForm from "../component/formLogin";
+import Jumbotron from "../component/Jumbotron";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Login</h1>
-		<LoginForm/>
-	</div>
-);
+
+const Home = () => {
+	return(
+		<div className="text-center mt-5">
+		<Jumbotron/>
+		</div>
+	)
+	
+};
+	
+
+
+export default Home;
