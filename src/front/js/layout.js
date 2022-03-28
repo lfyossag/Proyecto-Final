@@ -3,7 +3,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import  Home  from "./pages/home";
-import { Demo } from "./pages/demo";
+import { CatMen } from "./pages/catmen";
+import { CatWomen } from "./pages/catwomen";
+import { CreateUser} from "./pages/createuser";
+import { UserInfo} from "./pages/userinfo";
+import { UserOrders} from "./pages/userorders";
+import { NewProducts} from "./pages/newproducts";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
