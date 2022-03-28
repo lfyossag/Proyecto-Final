@@ -63,7 +63,7 @@ def get_profile():
 @api.route('/user', methods=["POST"])
 def create_account():
     body = request.get_json()
-    passw = current_app.bcrypt.generate_password_hash(body["password"])
+    passw = current_app.bcrypt.generate_password_hash(body["password"]).decode('utf-8')
     
     newUser = User(email= body["email"],name = body["name"], password = passw, lastName = body["lastName"])
     db.session.add(newUser)
