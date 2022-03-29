@@ -83,6 +83,12 @@ const getState = ({ getStore, getActions, setStore }) => {
             	.then(json=>console.log(json))
 			},
 
+			getCatWomen: () => {
+				fetch("https://fakestoreapi.com/products/category/women's%20clothing") //fetch para obtener la categoria men//
+            	.then(res=>res.json())
+            	.then(json=>console.log(json))
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
