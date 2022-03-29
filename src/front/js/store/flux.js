@@ -16,11 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			isLogged: false,
-<<<<<<< HEAD
 			catMen:[],
-=======
-			categoryMen: []
->>>>>>> ba9ed7c74a8f219aa59c5c554387d63c4907d017
+			catWomen:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
