@@ -16,7 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			isLogged: false,
-			categoryMen: []
+			catMen:[],
+			catWomen:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -77,15 +78,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 		.then(data => setStore({ message: data.message }))
 			// 		.catch(error => console.log("Error loading message from backend", error));
 			// },
-
-
-			getCategories: () => {
-				fetch("https://fakestoreapi.com/products/category/men's%20clothing")
-				  .then((response) => response.json())
-				  .then((data) => setStore({ categoryMen: data.results }))
-			  },
-
 			
+			getCatMen: () => {
+				fetch("https://fakestoreapi.com/products/category/men's%20clothing") //fetch para obtener la categoria men//
+            	.then(res=>res.json())
+            	.then(json=>console.log(json))
+			},
+
+			getCatWomen: () => {
+				fetch("https://fakestoreapi.com/products/category/women's%20clothing") //fetch para obtener la categoria men//
+            	.then(res=>res.json())
+            	.then(json=>console.log(json))
+			},
 
 			changeColor: (index, color) => {
 				//get the store
