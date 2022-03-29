@@ -1,11 +1,23 @@
-import React, {useContext} from "react";
+import React, {useState,useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { Redirect } from "react-router-dom";
 import "../../styles/nav.css";
 
+console.log("prueba", process.env.TEST);
 
 export const Navbar = () => {
+	const [email, setEmail] = useState("")
+	const [password, setPassword] = useState("")
 	const {store, actions} = useContext(Context)
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		actions.login(email, password);
+		setEmail("")
+		setPassword("")
+	}
+console.log(store.isLogged);
+
 	return (
 	
 	<nav className="navbar navbar-expand-lg navbar-light bg-light text-muted bg-dark">
