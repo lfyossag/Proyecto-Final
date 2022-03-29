@@ -1,11 +1,23 @@
-import React, {useContext} from "react";
+import React, {useState,useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { Redirect } from "react-router-dom";
 import "../../styles/nav.css";
 
+console.log("prueba", process.env.TEST);
 
 export const Navbar = () => {
+	const [email, setEmail] = useState("")
+	const [password, setPassword] = useState("")
 	const {store, actions} = useContext(Context)
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		actions.login(email, password);
+		setEmail("")
+		setPassword("")
+	}
+console.log(store.isLogged);
+
 	return (
 	
 	<nav className="navbar navbar-expand-lg navbar-light bg-light text-muted bg-dark">
@@ -27,7 +39,7 @@ export const Navbar = () => {
 				</li>
 			</ul>
     	</div>
-		<form className="d-flex topIcons dropdown ">
+		<form className="d-flex topIcons dropdown " onSubmit={handleSubmit} noValidate>
                     <a type="button" id="dropdownLoginUsuario" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="bi bi-person-circle  loginIcon "></i>
                     </a>
@@ -38,12 +50,26 @@ export const Navbar = () => {
                         </div>
                         
                             <div className="form-floating form-group mt-3 ">
-                                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                <label for="floatingInput">Email</label>
+                                <input 
+								type="email" 
+								className="form-control" 
+								id="floatingInput" 
+								placeholder="name@example.com"
+								onChange={(e)=>setEmail(e.target.value)}
+								value={email}
+								/>
+                                <label htmlFor="floatingInput">Email</label>
                             </div>
                             <div className="form-floating form-group mt-3">
-                                <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
-                                <label for="floatingPassword">Password*</label>
+                                <input 
+								type="password" 
+								className="form-control" 
+								id="floatingPassword" 
+								placeholder="Password" 
+								onChange={(e)=>setPassword(e.target.value)}
+								value={password}
+								/>
+                                <label htmlFor="floatingPassword">Password*</label>
                             </div>
                         
                         <div className="invisible forgot-password text-right mt-2">
