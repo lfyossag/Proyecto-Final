@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			isLogged: false
+			isLogged: false,
+			catMen:[],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -75,6 +76,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 		.then(data => setStore({ message: data.message }))
 			// 		.catch(error => console.log("Error loading message from backend", error));
 			// },
+			
+			getCatMen: () => {
+				fetch("https://fakestoreapi.com/products/category/men's%20clothing") //fetch para obtener la categoria men//
+            	.then(res=>res.json())
+            	.then(json=>console.log(json))
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
