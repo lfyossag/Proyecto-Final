@@ -22,7 +22,8 @@ export const FormRegister = () => {
 	}
 
 	const guardarUsuario = () => {
-		fetch('https://3001-joaquinalzugara-proyecto-ky1l8erosry.ws-us38.gitpod.io/api/user', {
+		console.log(process.env.BACKEND_URL)
+		fetch(process.env.BACKEND_URL+'/api/user', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -40,10 +41,10 @@ export const FormRegister = () => {
 	return (
 		<div className="d-flex justify-content-center">
 			<div className="w-25">
-				<div class="form-group mt-3">
+				<div className="form-group mt-3">
 					<input
 						type="text"
-						class="form-control"
+						className="form-control"
 						id="firtsName"
 						aria-describedby="firtsNameHelp"
 						placeholder="First Name"
@@ -52,10 +53,10 @@ export const FormRegister = () => {
 						value={data.name}
 					/>
 				</div>
-				<div class="form-group mt-3">
+				<div className="form-group mt-3">
 					<input
 						type="text"
-						class="form-control"
+						className="form-control"
 						id="lastName"
 						aria-describedby="lastNameHelp"
 						placeholder="Last Name"
@@ -64,10 +65,10 @@ export const FormRegister = () => {
 						value={data.lastName}
 					/>
 				</div>
-				<div class="form-group mt-3">
+				<div className="form-group mt-3">
 					<input
 						type="email"
-						class="form-control"
+						className="form-control"
 						id="email"
 						aria-describedby="emailHelp"
 						placeholder="Email"
@@ -76,10 +77,10 @@ export const FormRegister = () => {
 						value={data.email}
 					/>
 				</div>
-				<div class="form-group mt-3">
+				<div className="form-group mt-3">
 					<input
 						type="password"
-						class="form-control"
+						className="form-control"
 						id="password"
 						placeholder="Password"
 						onChange={onChangeData}
@@ -87,17 +88,17 @@ export const FormRegister = () => {
 						value={data.password}
 					/>
 				</div>
-				<div class="form-check mt-3">
+				<div className="form-check mt-3">
 					<input
 						type="checkbox"
-						class="form-check-input"
+						className="form-check-input"
 						id="check"
 					/>
-					<label class="form-check-label" for="check">
+					<label className="form-check-label" htmlFor="check">
 						I accept Terms and Conditions
 					</label>
 				</div>
-				<button type="buttom" onClick={()=> guardarUsuario()} class="btn btn-primary mt-3 mb-3 w-100 bg-dark">
+				<button type="buttom" onClick={()=> guardarUsuario()} className="btn btn-primary mt-3 mb-3 w-100 bg-dark">
 					CREATE ACCOUNT
 				</button>
 			</div>
