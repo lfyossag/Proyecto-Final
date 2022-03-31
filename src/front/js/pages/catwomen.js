@@ -9,12 +9,12 @@ export const CatWomen = () => {
          <h1 className='text-center py-2'>WOMEN CLOTHES</h1>
           {store.catWomen.map((item, i) => {
             return (
-        <div className="col-sm-6 col-md-4 col-lg-4 py-4 d-inline-flex" >
+        <div className="col-sm-6 col-md-4 col-lg-4 py-4 d-inline-flex" key={i} >
               <WomenProducts
-                key={i}
                 title={item.title}
                 price={item.price}
                 image={item.image}
+                id={item.id}
               />
               </div>
             );

@@ -17,7 +17,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			isLogged: false,
 			catMen:[],
-			catWomen:[]
+			catWomen:[],
+			item: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -89,6 +90,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch("https://fakestoreapi.com/products/category/women's%20clothing") //fetch para obtener la categoria women//
             	.then(res=>res.json())
             	.then(json=> setStore({ catWomen: json }))
+			},
+
+			getItem: (id) => {
+				fetch('https://fakestoreapi.com/products/'+id)
+            	.then(res=>res.json())
+            	.then(json=>setStore({item: json}))
 			},
 
 			changeColor: (index, color) => {
