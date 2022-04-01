@@ -7,7 +7,7 @@ export const FormRegister = () => {
         name: '',
         lastName: '',
 		email: '',
-        password: ''
+        password: '',	
     }
 
 	const [data, setData] = useState(defaultData);
@@ -23,7 +23,8 @@ export const FormRegister = () => {
 
 	const guardarUsuario = () => {
 		console.log(process.env.BACKEND_URL)
-		fetch(process.env.BACKEND_URL+'/api/user', {
+		// fetch(process.env.BACKEND_URL+'/api/user', {
+		fetch('https://3001-joaquinalzugara-proyecto-dicm99lcsmx.ws-us38.gitpod.io/api/user', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -35,6 +36,7 @@ export const FormRegister = () => {
             .then((data) => {
 				alert("Creado con éxito")
 				setData(defaultData)
+				document.location.href="/"
             });
 	}
 
