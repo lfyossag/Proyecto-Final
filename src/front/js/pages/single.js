@@ -95,6 +95,34 @@ export const Single = props => {
           </div>
         </div>
       </div>
+      <div className="text-center mt-3">
+        <h4>
+          You May Also Like
+        </h4>
+      </div>
+      <div className="col-lg-12 mx-auto d-flex mb-3">
+        <div className="col-4 mt-1">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+            alt="Gallery image 1"
+            className="active w-100"
+          />
+        </div>
+        <div className="col-4 mt-1">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+            alt="Gallery image 3"
+            className="w-100"
+          />
+        </div>
+        <div className="col-4 mt-1">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+            alt="Gallery image 4"
+            className="w-100"
+          />
+        </div>
+      </div>
     </div>
   );
 };
